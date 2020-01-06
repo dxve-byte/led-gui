@@ -10,10 +10,15 @@ COMMANDS:
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
 
 sudo apt-get install build-essential python-dev git scons swig
+
 sudo git clone https://github.com/jgarff/rpi_ws281x.git
+
 cd rpi_ws281x
+
 scons
+
 cd python
+
 sudo python setup.py install
 
 AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)
