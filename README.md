@@ -7,10 +7,10 @@ IMAGE: https://www.raspberrypi.org/downloads/raspbian/
 
 
 COMMANDS:
-
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
+
 sudo apt-get install build-essential python-dev git scons swig
-git clone https://github.com/jgarff/rpi_ws281x.git
+sudo git clone https://github.com/jgarff/rpi_ws281x.git
 cd rpi_ws281x
 scons
 cd python
