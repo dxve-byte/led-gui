@@ -1,3 +1,7 @@
+!!!THIS CODE BELOW IS NOT MY PROJECT!!!
+Full TUTORIAL: https://www.youtube.com/watch?v=FA9rMkuVmvQ&t=558s
+BE PATIENT with installing
+
 # led-gui
 
 __INSTALL / PATH's:__
@@ -67,4 +71,13 @@ defaults.pcm.card 1
 
 ___Finish___
 
+
+
+__Audio Reactive LED's__
+
+sudo apt-get update
+sudo apt-get install python-numpy python-scipy python-pyaudio
+sudo apt install python-pyqtgraph
+
+sudo git clone https://github.com/naztronaut/dancyPi-audio-reactive-led.git
 
