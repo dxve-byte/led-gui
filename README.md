@@ -1,12 +1,12 @@
 # led-gui
 
-INSTALL / PATH's:
+__INSTALL / PATH's:__
 
 
 IMAGE: https://www.raspberrypi.org/downloads/raspbian/
 
 
-COMMANDS:
+__COMMANDS:__
 
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
 
@@ -24,14 +24,14 @@ sudo python setup.py install
 
 cd examples
 
-Then run: sudo python strandtest.py (LED_PIN: 18!)
+__Then run: sudo python strandtest.py (LED_PIN: 18!)__
 (https://www.elektronik-kompendium.de/sites/raspberry-pi/1907101.htm)
 
-AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)
+__AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)__
 
 sudo nano /etc/asound.conf
 
-SET FILE TO FOLLOWING TEXT:
+__SET FILE TO FOLLOWING TEXT:__
 
 pcm.!default {
 
@@ -49,17 +49,17 @@ ctl.!default {
     
 }
 
-NEXT STEP:
+__NEXT STEP:__
 
 sudo nano /usr/share/alsa/alsa.conf
 
-Change
+__Change__
 
 defaults.ctl.card 0
 
 defaults.pcm.card 0
 
-To
+__To__
 
 defaults.ctl.card 1
 
