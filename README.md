@@ -24,7 +24,7 @@ sudo python setup.py install
 
 cd examples
 
-__Then run: sudo python strandtest.py (LED_PIN: 18!)__
+__Then run:__ sudo python strandtest.py __(LED_PIN: 18!)__
 (https://www.elektronik-kompendium.de/sites/raspberry-pi/1907101.htm)
 
 __AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)__
