@@ -22,6 +22,11 @@ cd python
 
 sudo python setup.py install
 
+cd examples
+
+Then run: sudo python strandtest.py (LED_PIN: 18!)
+(https://www.elektronik-kompendium.de/sites/raspberry-pi/1907101.htm)
+
 AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)
 
 sudo nano /etc/asound.conf
@@ -60,12 +65,6 @@ defaults.ctl.card 1
 
 defaults.pcm.card 1
 
+___Finish___
 
 
-Test the LED strip
-
-  cd rpi_ws281x/python/examples
-  
-  sudo nano strandtest.py
-  
-  sudo python strandtest.py
