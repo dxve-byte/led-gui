@@ -42,7 +42,6 @@ pcm.!default {
     type hw
     
     card 1
-    
 }
 
 ctl.!default {
@@ -50,7 +49,6 @@ ctl.!default {
     type hw
     
     card 1
-    
 }
 
 __NEXT STEP:__
@@ -76,7 +74,9 @@ ___Finish___
 __Audio Reactive LED's__
 
 sudo apt-get update
+
 sudo apt-get install python-numpy python-scipy python-pyaudio
+
 sudo apt install python-pyqtgraph
 
 sudo git clone https://github.com/naztronaut/dancyPi-audio-reactive-led.git
