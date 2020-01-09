@@ -25,7 +25,7 @@ sudo git clone https://github.com/jgarff/rpi_ws281x.git
 
 cd rpi_ws281x
 
-scons
+sudo scons
 
 cd python
 
