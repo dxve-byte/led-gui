@@ -95,3 +95,10 @@ sudo python visualization.py
 If there is an Error then use this command:
 
 sudo python visualization.py /tmp
+
+
+NOW MY PROJECT!
+
+cd
+
+sudo git clone https://github.com/dxve-byte/led-gui/LED.git
