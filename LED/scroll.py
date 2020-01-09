@@ -12,10 +12,8 @@ import sys
 visType = sys.argv[1]
 
 _time_prev = time.time() * 1000.0
-"""The previous time that the frames_per_second() function was called"""
 
 _fps = dsp.ExpFilter(val=config.FPS, alpha_decay=0.2, alpha_rise=0.2)
-"""The low-pass filter used to estimate frames-per-second"""
 
 
 def frames_per_second():
@@ -51,22 +49,6 @@ def _normalized_linspace(size):
 
 
 def interpolate(y, new_length):
-    """Intelligently resizes the array by linearly interpolating the values
-
-    Parameters
-    ----------
-    y : np.array
-        Array that should be resized
-
-    new_length : int
-        The length of the new interpolated array
-
-    Returns
-    -------
-    z : np.array
-        New array with length of new_length that contains the interpolated
-        values of y.
-    """
     if len(y) == new_length:
         return y
     x_old = _normalized_linspace(len(y))
@@ -91,7 +73,6 @@ gain = dsp.ExpFilter(np.tile(0.01, config.N_FFT_BINS),
 
 
 def visualize_scroll(y):
-    """Effect that originates in the center and scrolls outwards"""
     global p
     y = y**2.0
     gain.update(y)
@@ -103,7 +84,7 @@ def visualize_scroll(y):
     # Scrolling effect window
     p[:, 1:] = p[:, :-1]
     p *= 0.98
-    p = gaussian_filter1d(p, sigma=0.2)
+    p = gaussian_filter1d(p, sigma=10.2)
     # Create new color originating at the center
     p[0, 0] = r
     p[1, 0] = g
