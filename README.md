@@ -1,4 +1,5 @@
 !!!THIS CODE BELOW IS NOT MY PROJECT!!!
+
 Full TUTORIAL: https://www.youtube.com/watch?v=FA9rMkuVmvQ&t=558s
 
 BE PATIENT with installing
@@ -14,6 +15,7 @@ IMAGE: https://www.raspberrypi.org/downloads/raspbian/
 __COMMANDS:__
 
 __change__ sudo nano /boot/config.txt 
+
 __to__ led-gui/config.txt (replace)
 
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
@@ -107,11 +109,17 @@ sudo git clone https://github.com/dxve-byte/led-gui/
 sudo rsync -r dancyPi-audio-reactive-led/python/* led-gui/LED/
 
 __ERROR?__
+
 cd led-gui/LED/
+
 sudo chmod 777 config.py
+
 sudo nano config.py
 
 __CHANGE__
+
 USE_GUI = False
+
 __TO__
+
 USE_GUI = True
