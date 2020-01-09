@@ -1,5 +1,6 @@
 !!!THIS CODE BELOW IS NOT MY PROJECT!!!
 Full TUTORIAL: https://www.youtube.com/watch?v=FA9rMkuVmvQ&t=558s
+
 BE PATIENT with installing
 
 # led-gui
@@ -97,8 +98,8 @@ If there is an Error then use this command:
 sudo python visualization.py /tmp
 
 
-NOW MY PROJECT!
+__NOW MY PROJECT!__
 
 cd
 
-sudo git clone https://github.com/dxve-byte/led-gui/LED.git
+sudo git clone https://github.com/dxve-byte/led-gui/
