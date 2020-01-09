@@ -134,3 +134,7 @@ USE_GUI = False
 __TO__
 
 USE_GUI = True
+
+__FINSIH__
+
+With command "ls" you see what files in the directory are!
