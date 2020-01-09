@@ -8,7 +8,6 @@ BE PATIENT with installing
 
 __INSTALL / PATH's:__
 
-
 IMAGE: https://www.raspberrypi.org/downloads/raspbian/
 
 
@@ -16,7 +15,7 @@ __COMMANDS:__
 
 __change__ sudo nano /boot/config.txt 
 
-__to__ led-gui/config.txt (replace)
+__to__ led-gui/config.txt (replace the text from my GIT)
 
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
 
