@@ -42,6 +42,8 @@ Try to change the LED_PIN with "sudo nano strandtest.py".
 
 __AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)__
 
+cd
+
 sudo nano /etc/asound.conf
 
 __SET FILE TO FOLLOWING TEXT:__
