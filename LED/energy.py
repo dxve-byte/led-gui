@@ -84,7 +84,7 @@ def visualize_energy(y):
     # Scale by the width of the LED strip
     y *= float((config.N_PIXELS // 2) - 1)
     # Map color channels according to energy in the different freq bands
-    scale = 0.9
+    scale = 0.99
     r = int(np.mean(y[:len(y) // 3]**scale))
     g = int(np.mean(y[len(y) // 3: 2 * len(y) // 3]**scale))
     b = int(np.mean(y[2 * len(y) // 3:]**scale))
@@ -98,9 +98,9 @@ def visualize_energy(y):
     p_filt.update(p)
     p = np.round(p_filt.value)
     # Apply substantial blur to smooth the edges
-    p[0, :] = gaussian_filter1d(p[0, :], sigma=4.0)
-    p[1, :] = gaussian_filter1d(p[1, :], sigma=4.0)
-    p[2, :] = gaussian_filter1d(p[2, :], sigma=4.0)
+    p[0, :] = gaussian_filter1d(p[0, :], sigma=40.0)
+    p[1, :] = gaussian_filter1d(p[1, :], sigma=40.0)
+    p[2, :] = gaussian_filter1d(p[2, :], sigma=40.0)
     # Set the new pixel value
     return np.concatenate((p[:, ::-1], p), axis=1)
 
