@@ -100,7 +100,13 @@ sudo python visualization.py
 
 
 
-If there is an Error then use this command:
+__ERRORS:__
+
+
+change PIN with "sudo nano config.py" 
+!!! Pick your Device, Pi is normal !!! 
+USE_GUI = True 
+DISPLAY_FPS = False 
 
 sudo python visualization.py /tmp
 
