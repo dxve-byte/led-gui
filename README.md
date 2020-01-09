@@ -103,3 +103,15 @@ __NOW MY PROJECT!__
 cd
 
 sudo git clone https://github.com/dxve-byte/led-gui/
+
+sudo rsync -r dancyPi-audio-reactive-led/python/* led-gui/LED/
+
+__ERROR?__
+cd led-gui/LED/
+sudo chmod 777 config.py
+sudo nano config.py
+
+__CHANGE__
+USE_GUI = False
+__TO__
+USE_GUI = True
