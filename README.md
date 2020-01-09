@@ -36,6 +36,10 @@ cd examples
 __Then run:__ sudo python strandtest.py __(LED_PIN: 18!)__
 (https://www.elektronik-kompendium.de/sites/raspberry-pi/1907101.htm)
 
+__ERROR?__
+
+Try to change the LED_PIN with "sudo nano strandtest.py".
+
 __AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)__
 
 sudo nano /etc/asound.conf
