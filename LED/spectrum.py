@@ -92,7 +92,7 @@ def visualize_spectrum(y):
     r = np.concatenate((r[::-1], r))
     g = np.concatenate((g[::-1], g))
     b = np.concatenate((b[::-1], b))
-    output = np.array([r, g,b]) * 255
+    output = np.array([r,g,b]) * 255
     return output
 
 
