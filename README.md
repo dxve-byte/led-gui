@@ -94,7 +94,7 @@ sudo git clone https://github.com/naztronaut/dancyPi-audio-reactive-led.git
 
 __Run script:__
 
-cd /dancyPi-audio-reactive-led/python/
+cd dancyPi-audio-reactive-led/python/
 
 sudo python visualization.py
 
