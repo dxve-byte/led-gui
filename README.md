@@ -135,6 +135,21 @@ __TO__
 
 USE_GUI = True
 
-__FINSIH__
 
 With command "ls" you see what files in the directory are!
+
+__FINSIH__
+
+__THE GUI__
+
+sudo apt-get update
+
+sudo apt-get install apache2
+
+cd /var/www/html/
+
+sudo rm *
+
+__After that, include the GUI files from my GitHub to this Folder:__
+
+sudo rsync -r led-gui/GUI/* /var/www/html/
