@@ -1,4 +1,4 @@
-!!!THIS CODE BELOW IS NOT MY PROJECT!!!
+!!!THIS is an Tutorial for LED controlling!!!
 
 Full TUTORIAL: https://www.youtube.com/watch?v=FA9rMkuVmvQ&t=558s
 
