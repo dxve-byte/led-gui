@@ -155,3 +155,8 @@ sudo rm *
 __After that, include the GUI files from my GitHub to this Folder:__
 
 sudo rsync -r led-gui/GUI/* /var/www/html/
+
+sudo visudo
+
+This Text at the end: www-data ALL=NOPASSWD: ALL
+
