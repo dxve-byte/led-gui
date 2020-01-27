@@ -156,6 +156,8 @@ __After that, include the GUI files from my GitHub to this Folder:__
 
 sudo rsync -r led-gui/GUI/* /var/www/html/
 
+__The Webserver has no rights to execute the Comments, so:__
+
 sudo visudo
 
 This Text at the end: www-data ALL=NOPASSWD: ALL
