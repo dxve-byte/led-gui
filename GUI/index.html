@@ -1,17 +1,112 @@
 <DOCTYPE HTML>
 
 <html>
-  
-  <head>
-  
-  </head>
 
-  <body>
-  
-  </body>
-  
-  <style>
-  
-  </style>
+<head>
+	<title>Raspberry</title>
+	<link rel="stylesheet" href="style/stylesheet.css">
+	<link rel="stylesheet" href="style/stylesheet1.css">
+</head>
 
+<!-- DROPDOWN Menü------------------------------------: -->
+
+<div class="dropdown">
+	<button class="btn menubtn dropbtn"></button>
+	<div class="dropdown-content" style="left:0;">
+			<a href="#">asd</a>
+	</div>
+</div>
+
+<!-- Bright on side -->
+
+<form method="post">
+	<div class="side">
+		<label>Brightness:</label><br>
+		<input oninput="this.form.amountInput.value=this.value" name="amountRange" type="range" id="range1" min="1" max="255">
+		<input type="number" oninput="this.form.amountRange.value=this.value" name="amountInput" style="color: red"></label>
+	</div>
+	
+</form>
+
+
+<script>
+
+</script>
+
+
+<!-- BODY---------------------------------------------: -->
+	
+<body class="rainbow rainbow_text_animated">
+
+	<h1 style="color: white"><u>Raspberry Pi Control</u></h1><br>
+	<div class="wrapper">
+	<h1 class="h3" style="color: white"><u>LED</u></h1><br>
+		<div class="box">
+			<h3 class="h2">SOUND CONTROLLED LEDs</h2>
+			<a href="php/spectrum.php"><button class="btn btn3">Spectrum</button></a><br>
+			<a href="php/energy.php"><button class="btn btn3">Energy</button></a><br>
+			<a href="php/scroll.php"><button class="btn btn3">Scroll</button></a>
+		</div>
+		<div class="box">
+			<h3 class="h2">NORMAL LED TYPES</h3>
+			<a href="php/strandtest.php"><button class="btn btn1">Strandtest</button></a><br>
+			<a href="php/police.php"><button class="btn btn1">Police</button></a><br>
+			<a href="php/rainbow.php"><button class="btn btn1">Rainbow</button></a><br>
+			<a href="php/onecolor.php"><button class="btn btn1">OneColor</button></a><br>
+			<a href="php/fade.php"><button class="btn btn1">Fade</button></a>
+		</div>
+		<div class="box">
+			<h3 class="h2">TIME CONTROLLED LEDs</h3>
+			<a href="php/daytime.php"><button class="btn btn2">Daytime</button></a><br>
+			<a href="php/clock.php"><button class="btn btn2">Clock</button></a>
+		</div>
+		<div class="box">
+			<h3 class="h2">LED</h3>
+			<a href="php/stop.php"><button class="btn btn4">STOP LED</button></a><br>
+			<a href="php/off.php"><button class="btn btn4">LEDs OFF</button></a>
+		</div>
+		
+	</div>	
+	
+</body>
+
+<style>
+	
+	.menubtn {
+		position: fixed;
+		left: 0%;
+		top: 0%;
+		background-color: black;
+		border: none;
+		padding: 24px;
+		margin: 0;
+		background-image:url(style/menu.png);
+		background-repeat:no-repeat;
+		background-size:cover
+	}
+	
+	.dropdown-content {
+		width: 10%;
+		
+	}
+	
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,1.2);
+	}
+	
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	.dropdown-content * {
+		color: black;
+		display: block;
+		background-color: #333333;
+	}
+</style>
+	
 </html>
