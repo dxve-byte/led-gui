@@ -15,7 +15,7 @@ __COMMANDS:__
 
 __change__ sudo nano /boot/config.txt 
 
-__to__ led-gui/config.txt (replace the text from my GIT)
+__to__ led-gui/config.txt (replace the text from my GIT | you can remove config.txt: sudo rm /boot/config.txt and create a new with sudo nano /boot/config.txt THEN paste the Text from my GIT[config.txt])
 
 (https://github.com/scottlawsonbc/audio-reactive-led-strip)
 
