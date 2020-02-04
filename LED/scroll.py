@@ -167,6 +167,8 @@ y_roll = np.random.rand(config.N_ROLLING_HISTORY, samples_per_frame) / 1e16
 
 if sys.argv[1] == "scroll":
 	visType = visualize_scroll
+else:
+    visType = visualize_scroll
 
 visualization_effect = visType
 """Visualization effect to display on the LED strip"""
