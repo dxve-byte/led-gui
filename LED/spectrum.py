@@ -172,6 +172,8 @@ visualization_effect = visualize_spectrum
 
 if sys.argv[1] == "spectrum":
 	visType = visualize_spectrum
+else:
+    visType = visualize_spectrum
 
 visualization_effect = visualize_spectrum #visType
 """Visualization effect to display on the LED strip"""
