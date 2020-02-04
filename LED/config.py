@@ -41,7 +41,7 @@ FPS = 50
 _max_led_FPS = int(((N_PIXELS * 30e-6) + 50e-6)**-1.0)
 assert FPS <= _max_led_FPS, 'FPS must be <= {}'.format(_max_led_FPS)
 
-MIN_FREQUENCY = 200
+MIN_FREQUENCY = 100
 """Frequencies below this value will be removed during audio processing"""
 
 MAX_FREQUENCY = 12000
