@@ -115,9 +115,19 @@ __NOW MY PROJECT!__
 
 cd
 
+mkdir led-gui/
+
+mkdir led-gui/LED/
+
 sudo rsync -r dancyPi-audio-reactive-led/python/* led-gui/LED/
 
-sudo git clone https://github.com/dxve-byte/led-gui/
+sudo git clone https://github.com/dxve-byte/led-gui/ temp
+
+sudo mv temp/* led-gui/
+
+sudo mv temp/LED/* led-gui/LED/
+
+sudo rm -r temp
 
 __ERROR?__
 
