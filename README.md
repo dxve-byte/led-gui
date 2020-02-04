@@ -154,6 +154,8 @@ sudo rm *
 
 __After that, include the GUI files from my GitHub to this Folder:__
 
+cd
+
 sudo rsync -r led-gui/GUI/* /var/www/html/
 
 __The Webserver has no rights to execute the Comments, so:__
