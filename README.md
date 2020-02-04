@@ -115,9 +115,9 @@ __NOW MY PROJECT!__
 
 cd
 
-sudo git clone https://github.com/dxve-byte/led-gui/
-
 sudo rsync -r dancyPi-audio-reactive-led/python/* led-gui/LED/
+
+sudo git clone https://github.com/dxve-byte/led-gui/
 
 __ERROR?__
 
