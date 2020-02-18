@@ -29,9 +29,13 @@ def time():
 	
 	#reco()
 
-def weather():
-	#print(iweather)
-
+def weather(iweather):	
+	
+	#x = open("weathercont.txt","r")
+	#iweather = x.read()
+	#print("hier shteht ", iweather)
+	
+	
 	tts = gTTS(text=iweather, lang='de')
 	tts.save("output.mp3")
 	playsound("output.mp3")
