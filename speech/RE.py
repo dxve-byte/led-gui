@@ -29,12 +29,7 @@ def time():
 	
 	#reco()
 
-def weather(iweather):	
-	
-	#x = open("weathercont.txt","r")
-	#iweather = x.read()
-	#print("hier shteht ", iweather)
-	
+def weather(iweather):
 	
 	tts = gTTS(text=iweather, lang='de')
 	tts.save("output.mp3")
@@ -84,6 +79,13 @@ def sleeptrue():
 	
 def sleepfalse():
 	tts = gTTS(text="Ruhemodus ausgeschaltet", lang='de')
+	tts.save("output.mp3")
+	playsound("output.mp3")
+	
+	
+def wcyd():
+	tasks = "das wetter ansagen, oder du kannst mich nach der Zeit fragen. Wenn du magst kannst du mich auch beleidigen und wenn dir langweilig wird, können wir über deinen Tag reden."
+	tts = gTTS(text='Ich bin deine Sprachsteuerung ich kann für dich ' + tasks, lang='de')
 	tts.save("output.mp3")
 	playsound("output.mp3")
 	
