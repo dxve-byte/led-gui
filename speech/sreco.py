@@ -85,7 +85,7 @@ def compares(result):
 	resultlist = []
 
 
-	groups = [welcomegroup, timegroup, weathergroup, howareyougroup, whereareyougroup, insultgroup, sleeptruegroup, sleepfalsegroup]
+	groups = [welcomegroup, timegroup, weathergroup, howareyougroup, whereareyougroup, insultgroup, sleeptruegroup, sleepfalsegroup, whatcanyoudogroup]
 	
 	for all in groups:
 
@@ -120,18 +120,24 @@ def compares(result):
 			time()
 		if pos == 2:
 			groupname = "weathergroup"
-
-			resultlist = result.split()						# schneidet alle Wörter im resultstring aus
-			ort = resultlist[resultlist.index("in") + 1]	# sucht "in" und nimmt den ORT [nächstes Wort]
 			
+			try:
 			
-			r = requests.get("https://www.wetteronline.de/wetter/" + ort)			# hohlt sich URL
-			soup = BeautifulSoup(r.text, 'html.parser')								# parst die Seite
-			str1 = soup.find(id="forecasttext")										# findet id
-			str1.prettify()
-			iweather = re.sub('<[^>]*>', '', str(str1))								# löscht Zeichen (<p></p> ; usw.)
-			
-			weather(iweather)														# startet weather()
+				resultlist = result.split()						# schneidet alle Wörter im resultstring aus
+				ort = resultlist[resultlist.index("in") + 1]	# sucht "in" und nimmt den ORT [nächstes Wort]
+				
+				
+				r = requests.get("https://www.wetteronline.de/wetter/" + ort)			# hohlt sich URL
+				soup = BeautifulSoup(r.text, 'html.parser')								# parst die Seite
+				str1 = soup.find(id="forecasttext")										# findet id
+				str1.prettify()
+				iweather = re.sub('<[^>]*>', '', str(str1))								# löscht Zeichen (<p></p> ; usw.)
+				
+				weather(iweather)														# startet weather()
+			except:
+				tts = gTTS(text="Tut mir leid ich weiß nicht welchen Ort du meinst", lang='de')
+				tts.save("output.mp3")
+				playsound("output.mp3")
 			
 		if pos == 3:
 			groupname = "howareyougroup"
@@ -150,6 +156,9 @@ def compares(result):
 			groupname = "sleepfalsegroup"
 			sleepfalse()
 			sleepmode = "false"
+		if pos == 8:
+			groupname = "whatcanyoudogroup"
+			wcyd()
 			
 		print("I think I can classify this in group ", groupname)
 	
