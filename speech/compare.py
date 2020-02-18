@@ -8,16 +8,16 @@ weiß was Sie damit auswerten soll
 
 welcomegroup = ['hallo', 'hey', 'hi', 'guten tag', 'servus', 'ahoi', 'Huhu', 'moin', 'grüß dich', 'hallöchen', 'na',]			
 				
-timegroup = ['was', 'wieviel', 'wie', 'zeit', 'uhrzeit', 'uhr', 'clock', 'spät']
+timegroup = ['was', 'wieviel', 'wie', 'ist', 'es', 'zeit', 'uhrzeit', 'uhr', 'clock', 'spät']
 
-weathergroup = ['was', 'wie', 'sagt', 'wetter', 'wird', 'klima', 'wird']
+weathergroup = ['was', 'wie', 'sagt', 'das', 'wetter', 'wird', 'klima', 'wird', 'in']
 
 howareyougroup = ['wie', "geht's", 'es', 'dir', 'gehts', 'sag']
 
-whereareyougroup = ['wer', 'bist', 'du', 'denn', 'stell', 'dich', 'mal', 'vor']
+whereareyougroup = ['wer', 'bist', 'denn', 'stell', 'dich', 'mal', 'vor']
 
 insultgroup = ['spasst', 'huhrensohn', 'hitler', 'neger', 'dumme', 'sau', 'bitch', 'dünnbrettbohrer', 'blöd',
-				'poltergeist', 'hasse', 'dich', 'du']
+				'poltergeist', 'hasse', 'dich', 'du', 'bist', 'scheisse']
 				
 sleeptruegroup = ['sleepmode','schlafmode','schlafmodus', 'ruhemodus', 'ein','anschalten']
 
