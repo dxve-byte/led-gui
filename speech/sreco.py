@@ -10,11 +10,11 @@ import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
 import os
-from compare import *
-#from internet import *
+
+
+#Dateien
+from internetcrab import *
 from RE import *
-
-
 
 ####################################################### Requirements ################################################
 #pip install SpeechRecognition ; [for Speech to Text]
@@ -58,7 +58,6 @@ def reco():
 					
 				try:								# Versucht das Gesprochene mittels Google zu reconieren und in Text umzuwandeln
 					result = r.recognize_google(audio, language="de_DE")
-
 					compares(result)				# Wenn ALLES geklappt hat, wird es ausgewertet(compare block)
 							
 					#tts = gTTS(text=outputs, lang='de')
@@ -73,6 +72,8 @@ def reco():
 	
 global sleepmode
 sleepmode = "false"
+
+
 def compares(result):
 	result = result.lower() 						# setzt alles auf Kleinbuchstaben, um die Vergleichung zu vereinfachen
 	print(result)
@@ -81,33 +82,36 @@ def compares(result):
 	
 	exac = []
 	bin = []
+	resultlist = []
 
 
 	groups = [welcomegroup, timegroup, weathergroup, howareyougroup, whereareyougroup, insultgroup, sleeptruegroup, sleepfalsegroup]
-
+	
 	for all in groups:
 
 
 		for element in all:								# element = [hey, hallo, hallöchen] usw.
 			if element in result:						# Passt Element zu result-string
-				#print(element)
+				#lastword = resultlist[1]
 				bin.insert(0, element)					# Fügt neues Element bei "Bin" hinzu
 		exac.insert(999999, len(bin))					# Zählt List(bin) und fügt die Anzahl in eine neue List zu
 		bin.clear()										# Löscht die "Bin"-list
-		
+	
+	
+	
 	highestval = max(exac)								# Wählt die höchste Zahl aus
 	print("exac:", exac)
 	pos = exac.index(highestval)						# Postition von der höchsten Zahl
 
 	#print(pos)
 
-
 	# ############################################################
 	# ############### WELCHE LIST PASST AM BESTEN ZUM SATZ #################
 	# ############################################################
 
+
 	if robotname in result:
-		
+		#Hier geht er zur Datei RE.py um darauf zu Antworten
 		if pos == 0:
 			groupname = "welcomegroup"
 			welcome()
@@ -116,7 +120,19 @@ def compares(result):
 			time()
 		if pos == 2:
 			groupname = "weathergroup"
-			weather()
+
+			resultlist = result.split()						# schneidet alle Wörter im resultstring aus
+			ort = resultlist[resultlist.index("in") + 1]	# sucht "in" und nimmt den ORT [nächstes Wort]
+			
+			
+			r = requests.get("https://www.wetteronline.de/wetter/" + ort)			# hohlt sich URL
+			soup = BeautifulSoup(r.text, 'html.parser')								# parst die Seite
+			str1 = soup.find(id="forecasttext")										# findet id
+			str1.prettify()
+			iweather = re.sub('<[^>]*>', '', str(str1))								# löscht Zeichen (<p></p> ; usw.)
+			
+			weather(iweather)														# startet weather()
+			
 		if pos == 3:
 			groupname = "howareyougroup"
 			hay()
@@ -136,7 +152,6 @@ def compares(result):
 			sleepmode = "false"
 			
 		print("I think I can classify this in group ", groupname)
-
 	
 	
 
@@ -161,5 +176,9 @@ def error(x):
 			playsound('output.mp3')
 		
 
+
+
+
 if __name__ == '__main__':
 	reco() #Führt den 'reco' Block zuerst auf
+	
