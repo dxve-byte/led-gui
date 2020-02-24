@@ -25,7 +25,11 @@ from RE import *
 #pip3 install bs4 ; for Internet crab
 #python -m pip install requests
 #pip3 install playsound
-#Linux: 
+#
+#FOR ERRORS WITH PYAUDIO:
+#git clone https://github.com/jleb/pyaudio.git
+#cd pyaudio
+#sudo python3 setup.py install
 #####################################################################################################################
 
 ############################################## EIGENSCHAFTEN ########################################################
