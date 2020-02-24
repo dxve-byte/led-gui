@@ -34,6 +34,9 @@ from compare import *
 #
 # 	FOR ERRORS WITH FLAC:
 # sudo ln -s /usr/local/bin/flac /usr/sbin
+#
+# 	FOR ERRORS WITH AUDIO OUTPUT:
+# sudo apt-get install libgstreamer1.0-dev libgstreamer1.0-0-dbg libgstreamer1.0-0 gstreamer1.0-tools gstreamer-tools gstreamer1.0-doc gstreamer1.0-x
 #####################################################################################################################
 
 ############################################## EIGENSCHAFTEN ########################################################
