@@ -16,14 +16,16 @@ import os
 from internetcrab import *
 from RE import *
 
-################################################# Requirements [for win10] ################################################
-#pip install SpeechRecognition ; [for Speech to Text]
+####################################################### Requirements ################################################
+#pip3 install SpeechRecognition ; [for Speech to Text]
 #Herunterladen: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio (PyAudio‑0.2.11‑cp37‑cp37m‑win_amd64.whl)
 #zu Downloads wechseln und manuell installieren: (cd Downloads, pip install PyAudio-0.2.11-cp37-#cp37m-win_amd64.whl)
-#pip install gTTS ; for text to Speech
-#pip install mpyg321 ; for output
-#pip install bs4 ; for Internet crab
+#pip3 install gTTS ; for text to Speech
+#pip3 install mpyg321 ; for output
+#pip3 install bs4 ; for Internet crab
 #python -m pip install requests
+#pip3 install playsound
+#Linux: 
 #####################################################################################################################
 
 ############################################## EIGENSCHAFTEN ########################################################
