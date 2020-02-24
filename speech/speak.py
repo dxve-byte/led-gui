@@ -15,21 +15,25 @@ import os
 #Dateien
 from internetcrab import *
 from RE import *
+from compare import *
 
 ####################################################### Requirements ################################################
-#pip3 install SpeechRecognition ; [for Speech to Text]
-#Herunterladen: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio (PyAudio‑0.2.11‑cp37‑cp37m‑win_amd64.whl)
-#zu Downloads wechseln und manuell installieren: (cd Downloads, pip install PyAudio-0.2.11-cp37-#cp37m-win_amd64.whl)
-#pip3 install gTTS ; for text to Speech
-#pip3 install mpyg321 ; for output
-#pip3 install bs4 ; for Internet crab
-#python -m pip install requests
-#pip3 install playsound
+# pip3 install SpeechRecognition ; [for Speech to Text]
+# Herunterladen: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio (PyAudio‑0.2.11‑cp37‑cp37m‑win_amd64.whl)
+# zu Downloads wechseln und manuell installieren: (cd Downloads, pip install PyAudio-0.2.11-cp37-#cp37m-win_amd64.whl)
+# pip3 install gTTS ; for text to Speech
+# pip3 install mpyg321 ; for output
+# pip3 install bs4 ; for Internet crab
+# python -m pip install requests
+# pip3 install playsound
 #
-#FOR ERRORS WITH PYAUDIO:
-#git clone https://github.com/jleb/pyaudio.git
-#cd pyaudio
-#sudo python3 setup.py install
+# 	FOR ERRORS WITH PYAUDIO:
+# git clone https://github.com/jleb/pyaudio.git
+# cd pyaudio
+# sudo python3 setup.py install
+#
+# 	FOR ERRORS WITH FLAC:
+# sudo ln -s /usr/local/bin/flac /usr/sbin
 #####################################################################################################################
 
 ############################################## EIGENSCHAFTEN ########################################################
