@@ -1,4 +1,4 @@
-
+# coding=utf-8
 # PYTHON SPEECHRECOGNITION by dxve
 
 # *ACHTUNG GOOGLE HAT ANTEILE (Er ist hier für die "Speech to Text" Sache zuständig)*
