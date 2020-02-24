@@ -6,21 +6,45 @@ weiß was Sie damit auswerten soll
 
 '''
 
-welcomegroup = ['hallo', 'hey', 'hi', 'guten tag', 'servus', 'ahoi', 'Huhu', 'moin', 'grüß dich', 'hallöchen', 'na']
 
-timegroup = ['was', 'wieviel', 'wie', 'ist', 'es', 'zeit', 'uhrzeit', 'uhr', 'clock', 'spät']
+#searchintgroup
+Agroup = ['suche', 'kannst', 'du', 'finden', 'was', 'ist', 'such', 'sind', 'im', 'nach', 'internet', 'netz']
 
-weathergroup = ['was', 'wie', 'sagt', 'das', 'wetter', 'wird', 'klima', 'wird', 'in']
+#welcomegroup
+Bgroup = ['hallo', 'hey', 'hi', 'guten tag', 'servus', 'die', 'ahoi', 'Huhu', 'moin', 'grüß dich', 'hallöchen', 'na']
 
-howareyougroup = ['wie', "geht's", 'es', 'dir', 'gehts', 'sag']
+#timegroup
+Cgroup = ['was', 'wieviel', 'wie', 'ist', 'es', 'zeit', 'uhrzeit', 'clock', 'wird', 'spät']
 
-whereareyougroup = ['wer', 'bist', 'denn', 'stell', 'dich', 'mal', 'vor']
+#weathergroup
+Dgroup = ['was', 'wie', 'sagt', 'das', 'wetter', 'wird', 'klima', 'wird', 'in']
 
-insultgroup = ['spasst', 'huhrensohn', 'hitler', 'neger', 'dumme', 'sau', 'bitch', 'dünnbrettbohrer', 'blöd',
+#howareyougroup
+Egroup = ['wie', "geht's", 'es', 'dir', 'gehts', 'sag']
+
+#whereareyougroup
+Fgroup = ['wer', 'bist', 'denn', 'stell', 'dich', 'mal', 'vor']
+
+#insultgroup
+Ggroup = ['spasst', 'huhrensohn', 'hitler', 'neger', 'dumme', 'sau', 'bitch', 'dünnbrettbohrer', 'blöd',
 				'poltergeist', 'hasse', 'dich', 'du', 'bist', 'scheisse']
 
-sleeptruegroup = ['sleepmode','schlafmode','schlafmodus', 'ruhemodus', 'ein','anschalten']
+#sleeptruegroup
+Hgroup = ['sleepmode','schlafmode','schlafmodus', 'silentmode', 'ruhemodus', 'ein','anschalten', 'du', 'kannst', 'reden']
 
-sleepfalsegroup = ['sleepmode','schlafmode','schlafmodus', 'ruhemodus', 'aus','ausschalten']
+#sleepfalsegroup
+Igroup = ['sleepmode','schlafmode', 'silentmode', 'schlafmodus', 'ruhemodus', 'aus','ausschalten', 'sei', 'ruhig', 'stop',
+					'hör', 'auf', 'zu', 'reden']
 
-whatcanyoudogroup = ['was', 'kannst', 'du', 'alles', 'für', 'bist', 'du', 'zuständig']
+#whatcanyoudogroup
+Jgroup = ['was', 'kannst', 'du', 'alles', 'für', 'bist', 'du', 'zuständig']
+
+#consolegroup
+Kgroup = ['konsolenmodus', 'ein', 'starte', 'console', 'kontrollmodus', 'controlemode', 'programmiermodus']
+
+#randomnumbgroup
+Lgroup = ['zufallszahl', 'nenne', 'sage', 'zufall']
+
+
+
+groups = [Agroup, Bgroup, Cgroup, Dgroup, Egroup, Fgroup, Ggroup, Hgroup, Igroup, Jgroup, Kgroup, Lgroup]
