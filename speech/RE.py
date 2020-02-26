@@ -75,12 +75,12 @@ def insult():
 	play()
 	
 def sleeptrue():
-	tts = gTTS(text="Ruhemodus eingeschaltet", lang='de')
+	tts = gTTS(text="Ruhemodus eingeschaltet. Ich bin jetzt leise.", lang='de')
 	tts.save("output.mp3")
 	play()
 	
 def sleepfalse():
-	tts = gTTS(text="Ruhemodus ausgeschaltet", lang='de')
+	tts = gTTS(text="Ruhemodus ausgeschaltet. Ich bin jetzt wieder für dich da.", lang='de')
 	tts.save("output.mp3")
 	play()
 	
@@ -108,3 +108,14 @@ def console():
 	tts = gTTS(text="Befehle werden nur noch Manuell gesteuert.", lang='de')
 	tts.save("output.mp3")
 	play()
+	
+def music():
+	tts = gTTS(text="Musik wird abgespielt.", lang='de')
+	tts.save("output.mp3")
+	play()
+
+
+
+
+
+	
