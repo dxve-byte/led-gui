@@ -37,6 +37,11 @@ from compare import *
 #
 # 	FOR ERRORS WITH AUDIO OUTPUT:
 # sudo apt-get install libgstreamer1.0-dev libgstreamer1.0-0-dbg libgstreamer1.0-0 gstreamer1.0-tools gstreamer-tools gstreamer1.0-doc gstreamer1.0-x
+#
+#	For Mails:
+# pip install secure-smtplib
+# pip install python-imap
+# pip install email
 #####################################################################################################################
 
 ############################################## EIGENSCHAFTEN ########################################################
@@ -58,26 +63,24 @@ if sex == "":
 
 ############################################ START #################################	
 
+global silentmode
 
 def reco():
-											# Versucht ein Mikro zu finden
+	try:										# Versucht ein Mikro zu finden
 		r = sr.Recognizer()
 		with sr.Microphone() as source:
-											# hört zu und nimmt auf
-				print("Höre zu..")
-				audio = r.listen(source)
-					
+												# hört zu und nimmt auf
+			print("Höre zu..")
+			audio = r.listen(source)
+				
 												# Versucht das Gesprochene mittels Google zu reconieren und in Text umzuwandeln
-				result = r.recognize_google(audio, language="de_DE")
-				compares(result)				# Wenn ALLES geklappt hat, wird es ausgewertet(compare block)
+			result = r.recognize_google(audio, language="de_DE")
+			compares(result)				# Wenn ALLES geklappt hat, wird es ausgewertet(compare block)
 							
-					#tts = gTTS(text=outputs, lang='de')
-					#tts.save("output.mp3")
-					#playsound('output.mp3')
-									# Fehler 1 -> wird weitergegeben und ausgewertet
-	
-global silentmode
-silentmode = "false"
+					
+	except:
+		error()
+
 
 
 def compares(result):
@@ -91,12 +94,8 @@ def compares(result):
 	bin = []
 	resultlist = []
 	
-	groupscount = len(groups)							# Zählt wie viel Gruppen es gibt
 	
-	print('The count of p is:', groupscount)
 	for all in groups:
-
-
 		for element in all:								# element = [hey, hallo, hallöchen] usw.
 			if element in ressplit:						# Passt Element zu result-string
 				#print(result)
@@ -113,14 +112,15 @@ def compares(result):
 	
 	# Nimmt die 2. höchste Zahl und vergleicht ob sie mit der 1. höchsten gleich ist,
 	# um danach zu sagen dass es mehrere Resultate gab und nichts ausgeben kann
+	
 	pos = exac.index(highestval)						# Postition von der höchsten Zahl
 	exac.remove(highestval)								# Löscht die höchste Zahl
 	second_highestval = max(exac)						# Nimmt die 2. höchste Zahl
 	
-	if highestval == second_highestval:					# Macht jetzt den Vergleichung#
+	if highestval == second_highestval:					# Macht jetzt den Vergleichung
 		print("Type Error: To many results, need an exact result..")				# Fehler
 	else:
-			exac.insert(pos, highestval)
+		exac.insert(pos, highestval)				# fügt höchste Zahl wieder hinzu
 							
 	
 
@@ -129,105 +129,24 @@ def compares(result):
 	# ############### WELCHE LIST PASST AM BESTEN ZUM SATZ #################
 	# ############################################################
 
-
-		#if robotname in result:
-			#Hier geht er zur Datei RE.py um darauf zu Antworten
-			
-			
-			if pos == 0:
-				#search internet
-				groupname = "Agroup"
-			
-			if pos == 1:
-				#welcome
-				groupname = "Bgroup"
-				welcome()
-			if pos == 2:
-				#time
-				groupname = "Cgroup"
-				time()
-			if pos == 3:
-				#weather
-				groupname = "Dgroup"
-				
-				try:
-				
-					resultlist = result.split()						# schneidet alle Wörter im resultstring aus
-					ort = resultlist[resultlist.index("in") + 1]	# sucht "in" und nimmt den ORT [nächstes Wort]
-					
-					
-					r = requests.get("https://www.wetteronline.de/wetter/" + ort)			# hohlt sich URL
-					soup = BeautifulSoup(r.text, 'html.parser')								# parst die Seite
-					str1 = soup.find(id="forecasttext")										# findet id
-					str1.prettify()
-					iweather = re.sub('<[^>]*>', '', str(str1))								# löscht Zeichen (<p></p> ; usw.)
-					
-					weather(iweather)														# startet weather()
-				except:
-					tts = gTTS(text="Tut mir leid ich weiß nicht welchen Ort du meinst", lang='de')
-					tts.save("output.mp3")
-					playsound("output.mp3")
-				
-			if pos == 4:
-				#how are you
-				groupname = "Egroup"
-				hay()
-			if pos == 5:
-				#where are you
-				groupname = "Fgroup"
-				way()
-			if pos == 6:
-				#insult me
-				groupname = "Ggroup"
-				insult()
-			if pos == 7:
-				#sleepmode true
-				groupname = "Hgroup"
-				sleeptrue()
-				silentmode = "true"
-			if pos == 8:
-				#sleepmode false
-				groupname = "Igroup"
-				sleepfalse()
-				silentmode = "false"
-			if pos == 9:
-				#what can you do
-				groupname = "Jgroup"
-				wcyd()
-			if pos == 10:
-				#random number
-				groupname = "Kgroup"
-				console()
-			if pos == 11:
-				#random number
-				groupname = "Lgroup"
-				rn()
 		
+		groupspos = exac[pos]
+		print(groupsdic.keys())
+		forfunc = list(groupsdic.keys())[pos]
+		func(forfunc)
 			
-			#print("I think I can classify this in group ", groupname)
-	
+def func(forfunc):
+	print("Worked :", forfunc)
 	
 
-def error(x):
+def error():
 
-	#silentmode = ""
-	print("silentmode: ", silentmode)
-	if silentmode == "false":
-		if x == 1:
-			tts = gTTS(text="Es konnte kein Mikro gefunden werden. Schließen Sie eins an oder wechseln Sie zu den Einstellungen.", lang='de')
-			tts.save("output.mp3")
-			playsound('output.mp3')
-			
-		if x == 2:
-			tts = gTTS(text="Tut mir leid, dass konnte ich nicht verstehen.", lang='de')
-			tts.save("output.mp3")
-			playsound('output.mp3')
-			
-		if x == 3:
-			tts = gTTS(text="Ups, dass konnte nicht ausgewertet werden.", lang='de')
-			tts.save("output.mp3")
-			playsound('output.mp3')
-		
+	try:
+		tts = gTTS(text="Fehler. Bitte Internetverbindung, Code oder Mikro überprüfen.", lang='de')
+		tts.save("output.mp3")
+		playsound('output.mp3')
+	except:
+		print("Error with permission in Function Error(). Still not too bad..")
 
 
 
