@@ -40,6 +40,8 @@ __ERROR?__
 
 Try to change the LED_PIN with "sudo nano strandtest.py".
 
+Try to change "rpi_ws281x" to "neopixel" ... import *
+
 __AUDIO DEVICE CONFIGURATION: (USES JACK-AUDIO)__
 
 cd
